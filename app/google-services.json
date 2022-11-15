@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265946875077",
+    "project_id": "findyourcatv1",
+    "storage_bucket": "findyourcatv1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265946875077:android:eef1a141a50c2088dc1cac",
+        "android_client_info": {
+          "package_name": "com.example.findyourcatv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265946875077-f81ee086imqugqunlcnmsemb8snqd8tf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaIvHETz0rkrDEU8nK6C1zjxGVPxq4Rpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265946875077-f81ee086imqugqunlcnmsemb8snqd8tf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
