@@ -15,10 +15,10 @@
             style="android:indeterminate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,13 +26,24 @@
             android:orientation="vertical"
             tools:context=".ListFragment">
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_bar"
-                style="@style/Widget.AppCompat.SearchView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:defaultQueryHint="Search"
-                app:iconifiedByDefault="false"/>
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter" />
+
+                <EditText
+                    android:id="@+id/edittext_filter_name"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:hint="Name" />
+            </LinearLayout>
 
             <HorizontalScrollView
                 android:id="@+id/chipScrollView"
@@ -48,33 +59,33 @@
                     app:singleLine="true"
                     app:singleSelection="true">
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/orderby_date_chip"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/orderby_date_chip"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/orderby_name_chip"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Name"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/orderby_name_chip"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/orderby_place_chip"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Place"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/orderby_place_chip"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Place" />
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/orderby_reward_chip"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Reward"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/orderby_reward_chip"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reward" />
                 </com.google.android.material.chip.ChipGroup>
 
             </HorizontalScrollView>
@@ -87,7 +98,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -95,13 +106,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_input_add"/>
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -35,18 +35,6 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(name: String?): Boolean {
-                catsViewModel.filterByName("")
-                return true
-            }
-
-            override fun onQueryTextSubmit(name: String?): Boolean {
-                catsViewModel.filterByName("")
-                return false
-            }
-        })
-
         binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
             val chip: Chip? = group.findViewById(group.checkedChipId)
 
@@ -109,8 +97,11 @@ class ListFragment : Fragment() {
 
             }
         }
-    }
-
+            binding.buttonFilter.setOnClickListener {
+                val name = binding.edittextFilterName.text.toString().trim()
+                catsViewModel.filterByName(name)
+            }
+        }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
